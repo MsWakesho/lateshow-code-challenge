@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 import csv
+# with open ('seed.csv','r')as file:
+#     data = csv.reader(file)
+#     print(data)
+    
 from random import randint
 
 from app import app
@@ -55,7 +59,7 @@ if __name__ == '__main__':
     clear_database()
 
     print("Opening CSV...")
-    with open('server/seed.csv', newline='') as csvfile:
+    with open('seed.csv', newline='') as csvfile:
         rows = [row for row in csv.reader(csvfile, delimiter=',', quotechar='|')]
         print("Seeding episodes...")
         episodes = create_episodes(rows)
